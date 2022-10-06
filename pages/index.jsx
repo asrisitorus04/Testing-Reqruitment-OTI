@@ -1,31 +1,45 @@
-import Link from "next/link";
-import Navbar from "./components/Navbar";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
 import Head from "next/head";
+import Card from "react-bootstrap/Card";
+
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Home</title>
+        <title>E-Commerce</title>
       </Head>
-      <Navbar />
-      <section className="hero">
-        <div className="container">
-          <div className="text-wrapper">
-            <h1 className="title">Hallow, Saya Asri Apriliana Sitorus</h1>
-            <p className="description">
-              saya lulusan Teknik Komputer IPB University
-            </p>
-            <Link href="/contact">
-              <a className="cta">Kontak Saya</a>
-            </Link>
-          </div>
+      <div>
+        <Card className="box">
+          <Card.Body>
+            <div className="log">
+              <Card.Title className="login">login</Card.Title>
+              <Card.Subtitle className="content mb-2 text-muted">
+              Welcome back, enter your credentials to continue.
+              </Card.Subtitle>
+            </div>
+            <Form>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label className="tittle-form">Email</Form.Label>
+                <Form.Control className="box-form" type="email" placeholder="Enter email" />
+              </Form.Group>
 
-          <div className="image-wrap">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFec3Et0j8q5t1II7ZzJPfNRXCXLkEo6JENQ&usqp=CAU" />
-          </div>
-        </div>
-      </section>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label className="tittle-form">Password</Form.Label>
+                <Form.Control className="box-form" type="password" placeholder="Enter Password" />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Check className="check" type="checkbox" label="Remember me" />
+              </Form.Group>
+              <Button className="submit" variant="primary" type="submit">
+                <p className="klik-submit">login</p>
+              </Button>
+            </Form>
+          </Card.Body>
+        </Card>
+      </div>
     </>
   );
 }
